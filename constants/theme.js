@@ -15,7 +15,7 @@ const SIZES = {
   x32: 32,
 }
 
-const FONTS = {
+export const FONTS = {
   regular: 'DMRegular',
   medium: 'DMMedium',
   bold: 'DMBold',
