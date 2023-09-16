@@ -1,7 +1,8 @@
 import React from 'react';
-import {FlatList, Text} from 'react-native';
-import Preloader from './Preloader';
-import useFetch from '../hooks/useFetch';
+import {FlatList} from 'react-native';
+import Preloader from '../Preloader/Preloader';
+import useFetch from '../../hooks/useFetch';
+import Typography from '../Typography/Typography';
 
 const JobsList = () => {
   const {data, error, isLoading} = useFetch('search', {
