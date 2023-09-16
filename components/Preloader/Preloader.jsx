@@ -1,10 +1,11 @@
-import {ActivityIndicator, Text} from 'react-native';
+import {ActivityIndicator} from 'react-native';
+import Typography from '../Typography/Typography';
 
 const Preloader = ({isLoading, error, children}) => {
   return isLoading ? (
     <ActivityIndicator size="large"/>
   ) : error ? (
-    <Text>{error}</Text>
+    <Typography>{error.message}</Typography>
   ) : (
     children
   );

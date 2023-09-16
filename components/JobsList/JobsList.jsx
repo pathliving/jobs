@@ -14,7 +14,7 @@ const JobsList = () => {
     <Preloader isLoading={isLoading} error={error}>
       <FlatList
         data={data}
-        renderItem={({item}) => <Text>{item.job_title}</Text>}
+        renderItem={({item}) => <Typography>{item.job_title}</Typography>}
       />
     </Preloader>
   );

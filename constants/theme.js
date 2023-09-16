@@ -20,3 +20,13 @@ export const FONTS = {
   medium: 'DMMedium',
   bold: 'DMBold',
 }
+
+export const TYPOGRAPHY = {
+  h1: SIZES.x32,
+  h2: SIZES.x24,
+  h3: SIZES.x20,
+  h4: SIZES.x16,
+  h5: SIZES.x12,
+  h6: SIZES.x8,
+  p: SIZES.x16,
+}

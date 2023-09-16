@@ -1,5 +1,6 @@
-import {SafeAreaView, TouchableOpacity, Text} from 'react-native';
+import {SafeAreaView, TouchableOpacity} from 'react-native';
 import {Stack} from 'expo-router';
+import Typography from '../Typography/Typography';
 
 const Header = () => {
   return (
@@ -11,14 +12,14 @@ const Header = () => {
           headerLeft: () => <TouchableOpacity
             style={{height: 40, width: 40, justifyContent: "center", alignItems: "center"}}
             color="#000"
-            onPress={() => {}}>menu</TouchableOpacity>,
+            onPress={() => {}}><Typography>menu</Typography></TouchableOpacity>,
           headerRight: () => <TouchableOpacity
             style={{height: 40, width: 40, justifyContent: "center", alignItems: "center"}}
             color="#000"
-            onPress={() => {}}>avatar</TouchableOpacity>,
+            onPress={() => {}}><Typography>avatar</Typography></TouchableOpacity>,
         }}
       />
-      <Text style={{color: '#333'}}>head</Text>
+      <Typography style={{color: '#333'}}>head</Typography>
     </SafeAreaView>
   );
 }
