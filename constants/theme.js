@@ -1,12 +1,14 @@
-const COLORS = {
+export const COLORS = {
   primary: '#312651',
   secondary: '#444262',
   ghost: '#83829A',
   accent: '#FF7754',
   azure: '#E6E4E6',
+  white: '#FFFFFF'
 }
 
-const SIZES = {
+export const SIZES = {
+  x4: 4,
   x8: 8,
   x12: 12,
   x16: 16,
