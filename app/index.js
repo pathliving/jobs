@@ -1,17 +1,30 @@
-import {View} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import Header from '../components/Header/Header';
 import Welcome from '../components/Welcome/Welcome';
+import PopularJobs from '../components/PopularJobs/PopularJobs';
 import JobsList from '../components/JobsList/JobsList';
-import Typography from '../components/Typography/Typography';
+import ActionIcon from '../components/Action/ActionIcon';
+import {COLORS} from '../constants/theme';
+import * as icons from '../constants/icons';
+import * as images from '../constants/images';
 
-export default function Page() {
+export default function Home() {
   return (
-    <View>
-      <Typography type="h2">Header</Typography>
-      <Header/>
+    <View style={styles.home}>
+      <Header
+        headerLeft={<ActionIcon size={24} name={icons.menu} />}
+        headerRight={<ActionIcon size={40} name={images.avatar} />}
+      />
       <Welcome/>
-      <Typography type="h2">Body</Typography>
-      <JobsList/>
+      <PopularJobs>
+        <JobsList />
+      </PopularJobs>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  home: {
+    backgroundColor: COLORS.tundra,
+  },
+})
