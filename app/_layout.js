@@ -1,21 +1,17 @@
-import {Slot} from 'expo-router';
-import {useFonts} from 'expo-font';
-import {FONTS} from '../constants/theme';
-import getFont from '../helpers/getFont';
+import {Stack} from 'expo-router';
+import useStaticFonts from '../hooks/useStaticFonts';
 
 const Layout = () => {
-  const [fontsLoaded, fontError] = useFonts({
-    [FONTS.regular]: getFont('DMSans-Regular', 'ttf'),
-    [FONTS.medium]: getFont('DMSans-Medium', 'ttf'),
-    [FONTS.bold]: getFont('DMSans-Bold', 'ttf'),
-  });
+  const [fontsLoaded, fontError] = useStaticFonts();
 
   if (!fontsLoaded && !fontError) {
     return null;
   }
 
   return (
-    <Slot />
+    <Stack initialRouteName="index">
+      <Stack.Screen name="index" />
+    </Stack>
   )
 };
 
