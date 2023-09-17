@@ -1,10 +1,15 @@
 import React from 'react';
 import {StyleSheet, Text as TextDefault} from 'react-native';
-import {FONTS, TYPOGRAPHY} from '../../constants/theme';
+import {TYPOGRAPHY, FONTS} from '../../constants/theme';
 
-const Typography = ({children, type = 'p', style: propStyles}) => {
+const Typography = ({
+  children,
+  appearance = TYPOGRAPHY.p,
+  type = FONTS.regular,
+  style: propStyles,
+}) => {
   return (
-    <TextDefault style={styles.text(type, propStyles)}>
+    <TextDefault style={styles.text(appearance, type, propStyles)}>
       {children}
     </TextDefault>
   );
@@ -13,9 +18,9 @@ const Typography = ({children, type = 'p', style: propStyles}) => {
 export default Typography;
 
 const styles = StyleSheet.create({
-  text: (type, propStyles) => ({
-    fontFamily: FONTS.regular,
-    fontSize: type ? TYPOGRAPHY[type] : TYPOGRAPHY['p'],
+  text: (appearance, type, propStyles) => ({
+    fontFamily: type ?? FONTS.regular,
+    fontSize: appearance ?? TYPOGRAPHY.p,
     ...propStyles
   }),
 });
