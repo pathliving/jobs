@@ -1,11 +1,11 @@
 import React from 'react';
 import {TouchableOpacity, StyleSheet} from 'react-native';
-import {COLORS, SIZES, FONTS} from '../../constants/theme';
+import {COLORS, SIZES} from '../../constants/theme';
 import Typography from "../Typography/Typography";
 
-const Action = ({children, type}) => {
+const Action = ({children, type, style: propStyles}) => {
   return (
-    <TouchableOpacity style={styles.action(type)}>
+    <TouchableOpacity style={styles.action(type, propStyles)}>
       <Typography style={styles.typography(type)}>
         {children}
       </Typography>
@@ -24,14 +24,13 @@ const ACTION_TYPES = {
 }
 
 const styles = StyleSheet.create({
-  action: (type) => ({
-    fontFamily: FONTS.regular,
-    fontSize: 20,
+  action: (type, propStyles) => ({
     backgroundColor: type ? ACTION_TYPES[type] : ACTION_TYPES["ACCENT"],
-    borderRadius: SIZES.x4,
-    height: 40,
-    alignItems: 'center',
-    justifyContent: 'center',
+    borderRadius: SIZES.x12,
+    height: '100%',
+    width: '100%',
+    padding: 0,
+    ...propStyles,
   }),
   typography: (type) => ({
     color: type === COLORS.azure ? COLORS.ghost : COLORS.white
