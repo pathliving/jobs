@@ -1,36 +1,26 @@
 import React from 'react';
-import Typography from "../Typography/Typography";
-import {StyleSheet, TouchableOpacity, View} from "react-native";
-import {COLORS, FONTS, SIZES, TYPOGRAPHY} from "../../constants/theme";
-import {useRouter} from "expo-router";
+import {TouchableOpacity, View} from 'react-native';
+import {useRouter} from 'expo-router';
+import Typography from '../Typography/Typography';
+import JobsList from '../JobsList/JobsList';
+import {FONTS, TYPOGRAPHY} from '../../constants/theme';
+import {styles} from './styles';
 
-const PopularJobs = ({children}) => {
-    const router = useRouter();
+const PopularJobs = () => {
+  const router = useRouter();
 
-    return (
-        <View>
-            <View style={styles.popularJobs}>
-                <Typography appearance={TYPOGRAPHY.h3} type={FONTS.medium}>Popular jobs</Typography>
-                <TouchableOpacity onPress={() => router.push('/search/all')}>
-                    <Typography appearance={TYPOGRAPHY.p} type={FONTS.regular} style={styles.more}>Show all</Typography>
-                </TouchableOpacity>
-            </View>
-            {children}
-        </View>
-    );
+  return (
+    <View>
+      <View style={styles.popularJobs}>
+        <Typography size={TYPOGRAPHY.h3} type={FONTS.medium}>Popular jobs</Typography>
+        <TouchableOpacity onPress={() => router.push('/search/all')}>
+          <Typography size={TYPOGRAPHY.p} type={FONTS.regular} style={styles.more}>Show
+            all</Typography>
+        </TouchableOpacity>
+      </View>
+      <JobsList/>
+    </View>
+  );
 };
 
 export default PopularJobs;
-
-const styles = StyleSheet.create({
-    popularJobs: {
-        marginHorizontal: SIZES.x12,
-        marginBottom: SIZES.x12,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'flex-end',
-    },
-    more: {
-        color: COLORS.ghost,
-    }
-})

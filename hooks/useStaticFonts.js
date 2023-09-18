@@ -1,5 +1,5 @@
-import {useFonts} from "expo-font";
-import {FONTS} from "../constants/theme";
+import {useFonts} from 'expo-font';
+import {FONTS} from '../constants/theme';
 
 const useStaticFonts = () => {
     const [fontsLoaded, fontError] = useFonts({

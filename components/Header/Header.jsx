@@ -1,25 +1,23 @@
-import {SafeAreaView, TouchableOpacity} from 'react-native';
+import {SafeAreaView} from 'react-native';
 import {Stack} from 'expo-router';
-import Typography from '../Typography/Typography';
+import {COLORS} from '../../constants/theme';
+import {styles} from './styles';
 
-const Header = () => {
+const Header = ({headerLeft, headerRight}) => {
   return (
-    <SafeAreaView style={{flex: 1, height: 40}}>
+    <SafeAreaView style={styles.header}>
       <Stack.Screen
-        style={{display: 'flex', flex: 1, height: 40, width: '100%'}}
         options={{
           headerTitle: '',
-          headerLeft: () => <TouchableOpacity
-            style={{height: 40, width: 40, justifyContent: "center", alignItems: "center"}}
-            color="#000"
-            onPress={() => {}}><Typography>menu</Typography></TouchableOpacity>,
-          headerRight: () => <TouchableOpacity
-            style={{height: 40, width: 40, justifyContent: "center", alignItems: "center"}}
-            color="#000"
-            onPress={() => {}}><Typography>avatar</Typography></TouchableOpacity>,
+          headerShadowVisible: false,
+          headerStyle: {
+            backgroundColor: COLORS.tundra,
+          },
+          headerLeft: () => headerLeft,
+          headerRight: () => headerRight,
         }}
+        style={styles.header}
       />
-      <Typography style={{color: '#333'}}>head</Typography>
     </SafeAreaView>
   );
 }

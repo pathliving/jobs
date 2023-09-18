@@ -1,24 +1,16 @@
 import React from 'react';
-import {Image, StyleSheet} from 'react-native';
-import {SIZES} from "../../constants/theme";
+import {Image} from 'react-native';
+import {styles} from './styles';
 
-const Icon = ({size = 24, name, alt = 'icon', style: propStyles}) => {
+const Icon = ({size = 24, name, color, alt = 'icon', style: propStyles}) => {
   return (
     <Image
       source={name}
+      resizeMode="contain"
       alt={alt}
-      style={styles.icon(size, propStyles)}
+      style={styles.icon(size, color, propStyles)}
     />
   );
 };
 
 export default Icon;
-
-const styles = StyleSheet.create({
-  icon: (size, propStyles) => ({
-    width: size,
-    height: size,
-    borderRadius: SIZES.x12,
-    ...propStyles
-  })
-})

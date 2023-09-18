@@ -2,9 +2,9 @@ import {useEffect, useState} from 'react';
 import axios from 'axios';
 
 const useFetch = (endpoint, query) => {
-  const [isLoading, setIsLoading] = useState();
-  const [error, setError] = useState();
-  const [data, setData] = useState();
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [data, setData] = useState([]);
 
   const options = {
     method: 'GET',
